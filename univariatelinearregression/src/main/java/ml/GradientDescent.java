@@ -18,7 +18,7 @@ public class GradientDescent {
         }
     }
 
-    public void takeAStep(Double learningRate, ArrayList<TrainingData1> trainingData1, Hypothesis hypothesis) {
+    private void takeAStep(Double learningRate, ArrayList<TrainingData1> trainingData1, Hypothesis hypothesis) {
         Double tempTheta0 = hypothesis.getTheta0() - (learningRate * getDerivativeWithRespectToTheta0(trainingData1, hypothesis));
         Double tempTheta1 = hypothesis.getTheta1() - (learningRate * getDerivativeWithRespectToTheta1(trainingData1, hypothesis));
 
@@ -67,12 +67,11 @@ public class GradientDescent {
     }
 
     public Double getCost(TrainingData1 trainingData1, Hypothesis hypothesis) {
-        //given an equation subtract the result of that from the expected result
         Double output = hypothesize(trainingData1.getInput(), hypothesis);
         return output - trainingData1.getExpectedOutput();
     }
 
-    private Double hypothesize(Double input, Hypothesis hypothesis) {
+    public Double hypothesize(Double input, Hypothesis hypothesis) {
         return hypothesis.getTheta0() + (hypothesis.getTheta1() * input);
     }
 }
