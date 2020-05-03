@@ -1,7 +1,6 @@
 import Util.TrainingDataReader;
 import ml.GradientDescent;
 import model.Hypothesis;
-import model.TrainingData1;
 
 import java.util.ArrayList;
 import java.util.Scanner;
